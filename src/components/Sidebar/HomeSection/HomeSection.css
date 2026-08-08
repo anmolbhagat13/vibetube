@@ -1,0 +1,37 @@
+.shortcut-links{
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.side-link {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 40px;
+    width: fit-content;
+    border: 0;
+    border-radius: 10px;
+    padding: 0 12px;
+    margin-left: 1px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.side-link p {
+    width: 132px;
+}
+
+.side-link:hover {
+    background: #f2f2f2;
+}
+
+.side-link img {
+    width: 24px;
+    margin-right: 20px;
+}
+
+.small-side-link {
+    display: none;
+}
+ 

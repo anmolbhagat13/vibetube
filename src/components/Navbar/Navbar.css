@@ -3,6 +3,10 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 0 16px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+
 }
 
 .nav-left {
@@ -14,8 +18,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 35px;
-    width: 35px;
+    padding: 8px;
     outline: none;
     border: none;
     background: none;

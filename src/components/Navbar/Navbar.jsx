@@ -9,13 +9,13 @@ import Icon from '../../assets/vt-icon.png'
 import Vtwhite from '../../assets/vt-white.png'
 import Profile from '../../assets/profile.png'
 
-const Navbar = () => {
+const Navbar = ({setSidebar}) => {
     return (
         <nav>
             <div className="nav-left">
-                <button className='menu-btn'><Menu size={23} /></button>
+                <button onClick={()=>setSidebar(prev=>prev===false?true:false)} className='menu-btn'><Menu size={23} /></button>
                 <div className="vt-icon">
-                    <img className='icon-img' src={Icon} alt="" />
+                    <img className='icon-img' src={Icon} alt=""/>
                     <img src={Vtwhite} alt="" />
                 </div>
             </div>
