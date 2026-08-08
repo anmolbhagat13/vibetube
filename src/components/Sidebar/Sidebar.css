@@ -6,14 +6,10 @@
     top: 55px;
 }
 
-
-
-/* .shortcut-links,
-.subs,
 .you {
     padding: 12px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-} */
+}
 
 .side-link {
     display: flex;
@@ -29,10 +25,6 @@
     cursor: pointer;
 }
 
-
-
-
-/* .subs span,
 .you span {
     display: flex;
     align-items: center;
@@ -42,18 +34,7 @@
     font-size: 16px;
     font-weight: 600;
     color: #0e0e0e;
-} */
-
-/* .subs span:hover {
-    background: #f2f2f2;
 }
-
-.subs .side-link img {
-    width: 24px;
-    border-radius: 50%;
-} */
-
-
 
 .small-sidebar {
     width: 5%;
@@ -83,14 +64,6 @@
     margin: 0;
     margin-bottom: 6px;
 }
-
-
-
-
-
-
-
-
 
 .small-sidebar .subs,
 .small-sidebar .you {

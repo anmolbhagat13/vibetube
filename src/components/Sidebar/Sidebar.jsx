@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './Sidebar.css'
-import { ChevronRight } from 'lucide-react'
+
 import HomeSection from './HomeSection/HomeSection'
+import Subscription from './SubscriptionSection/Subscription'
 
 const Sidebar = ({ sidebar }) => {
 
@@ -10,6 +11,7 @@ const Sidebar = ({ sidebar }) => {
     return (
         <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
             <HomeSection/>
+            <Subscription/>
         </div>
     )
 }
