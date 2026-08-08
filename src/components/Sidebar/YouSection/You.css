@@ -1,0 +1,33 @@
+.you {
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.side-link {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 40px;
+    width: fit-content;
+    border: 0;
+    border-radius: 10px;
+    padding: 0 12px;
+    padding-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.you span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0e0e0e;
+}
+
+.you span:hover {
+    background: #f2f2f2;
+}
