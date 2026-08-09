@@ -56,7 +56,8 @@
 
 .small-sidebar .subs,
 .small-sidebar .you,
-.small-sidebar .explore{
+.small-sidebar .explore,
+.small-sidebar .rphistory{
     display: none;
 }
 
