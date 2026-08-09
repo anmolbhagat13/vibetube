@@ -1,0 +1,27 @@
+.footer1{
+    /* width: 225px; */
+    padding: 16px 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.footer2{
+    padding: 12px 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer1 p, .footer2 p{
+    line-height: 1rem;
+    font-size: 14px;
+    color: #606060;
+    width: fit-content;
+    font-weight: 500;
+    margin-right: 8px;
+    line-height: 20px;
+}
+.copyright{
+    padding: 16px 24px;
+    color: #909090;
+    font-size: 12px;
+}

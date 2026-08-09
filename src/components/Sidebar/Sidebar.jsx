@@ -5,6 +5,7 @@ import Subscription from './SubscriptionSection/Subscription'
 import You from './YouSection/You'
 import Explore from './ExploreSection/Explore'
 import RHistory from './ReportHistorySection/RHistory'
+import Footer from './FooterSection/Footer'
 
 const Sidebar = ({ sidebar }) => {
 
@@ -17,6 +18,7 @@ const Sidebar = ({ sidebar }) => {
             <You showMore={showMore} setShowMore={setShowMore}/>
             <Explore showMore={showMore} setShowMore={setShowMore}/>
             <RHistory/>
+            <Footer/>
         </div>
     )
 }
