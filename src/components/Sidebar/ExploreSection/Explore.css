@@ -25,3 +25,7 @@
     font-weight: 600;
     color: #0e0e0e;
 }
+
+.explore span:hover {
+    background: #f2f2f2;
+}
