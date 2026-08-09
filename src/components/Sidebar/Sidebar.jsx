@@ -3,6 +3,7 @@ import './Sidebar.css'
 import HomeSection from './HomeSection/HomeSection'
 import Subscription from './SubscriptionSection/Subscription'
 import You from './YouSection/You'
+import Explore from './ExploreSection/Explore'
 
 const Sidebar = ({ sidebar }) => {
 
@@ -13,6 +14,7 @@ const Sidebar = ({ sidebar }) => {
             <HomeSection/>
             <Subscription/>
             <You showMore={showMore} setShowMore={setShowMore}/>
+            <Explore showMore={showMore} setShowMore={setShowMore}/>
         </div>
     )
 }

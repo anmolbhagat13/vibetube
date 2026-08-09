@@ -3,19 +3,19 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-
 .side-link {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     height: 40px;
-    width: fit-content;
+    width: 100%;
     border: 0;
     border-radius: 10px;
-    padding: 0 12px;
+    padding: 0 14px 0 10px;
     margin-left: 1px;
     font-size: 14px;
     cursor: pointer;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .side-link p {
@@ -31,7 +31,10 @@
     margin-right: 20px;
 }
 
-.small-side-link {
-    display: none;
+.side-link img, .side-link p{
+    margin-top: 3px;
 }
- 
+
+.sidebar .small-side-link {
+    display: none;
+}   
