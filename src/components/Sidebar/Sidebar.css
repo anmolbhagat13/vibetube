@@ -3,12 +3,22 @@
     width: 240px;
     background: #fff;
     position: fixed;
-    top: 55px;
-    overflow-y: auto;
-    flex-shrink: 0;
+    top: 56px;
+    overflow-y: hidden;
     box-sizing: border-box;
 }
 
+.sidebar-content {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+.sidebar-inner {
+    margin-top: -12px;
+}
 
 .side-link {
     display: flex;
@@ -21,7 +31,6 @@
     font-size: 14px;
     cursor: pointer;
     white-space: nowrap;
-    box-sizing: border-box;
 }
 
 
@@ -63,4 +72,17 @@
 
 .small-sidebar .shortcut-links .small-side-link{
     display: flex;
+}
+
+.sidebar-content::-webkit-scrollbar {
+    width: 0;
+}
+
+.sidebar-content:hover::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-content:hover::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
 }

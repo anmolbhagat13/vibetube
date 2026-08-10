@@ -13,12 +13,16 @@ const Sidebar = ({ sidebar }) => {
 
     return (
         <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-            <HomeSection/>
-            <Subscription/>
-            <You showMore={showMore} setShowMore={setShowMore}/>
-            <Explore showMore={showMore} setShowMore={setShowMore}/>
-            <RHistory/>
-            <Footer/>
+            <div className="sidebar-content">
+                <div className="sidebar-inner">
+                    <HomeSection />
+                    <Subscription />
+                    <You showMore={showMore} setShowMore={setShowMore} />
+                    <Explore showMore={showMore} setShowMore={setShowMore} />
+                    <RHistory />
+                    <Footer />
+                </div>
+            </div>
         </div>
     )
 }
