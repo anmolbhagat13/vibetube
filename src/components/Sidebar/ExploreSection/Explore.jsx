@@ -17,7 +17,7 @@ import memberships from '../../../assets/vt-memberships.png'
 
 const Explore = ({showMore,setShowMore}) => {
     return (
-        <div className="explore">
+        <div className="explore big">
             <span>Explore</span>
             <div className="side-link">
                 <img src={shopping} alt="" /> <p>Shopping</p>

@@ -8,7 +8,7 @@ import justinbieber from '../../../assets/justinBieber.jpg'
 
 const Subscription = () => {
     return (
-        <div className="subs">
+        <div className="subs big">
             <span>Subscriptions <ChevronRight size={16} /></span>
             <div className="side-link">
                 <img src={mrbeast} alt="" /><p>MrBeast</p>

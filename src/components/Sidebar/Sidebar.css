@@ -63,12 +63,10 @@
     margin-bottom: 6px;
 }
 
-.small-sidebar .subs,
-.small-sidebar .you,
-.small-sidebar .explore,
-.small-sidebar .rphistory{
+.small-sidebar .big{
     display: none;
 }
+
 
 .small-sidebar .shortcut-links .small-side-link{
     display: flex;

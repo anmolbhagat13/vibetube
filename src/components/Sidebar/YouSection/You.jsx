@@ -14,7 +14,7 @@ import showless from '../../../assets/vt-showless.svg'
 
 const You = ({showMore, setShowMore}) => {
     return (
-        <div className="you">
+        <div className="you big">
             <span>You <ChevronRight size={16} /></span>
             <div className="side-link">
                 <img src={yrchannel} alt="" /> <p>Your channel</p>

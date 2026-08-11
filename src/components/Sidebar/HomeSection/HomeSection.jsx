@@ -1,7 +1,7 @@
 import React from 'react'
 import './HomeSection.css'
 import house from '../../../assets/vt-house.svg'
-import shorts from '../../../assets/vt-shorts.svg'
+import shorts from '../../../assets/vt-shorts.png'
 import user from '../../../assets/vt-user.svg'
 import subs from '../../../assets/vt-subs.png'
 
