@@ -9,7 +9,8 @@ import Footer from './FooterSection/Footer'
 
 const Sidebar = ({ sidebar }) => {
 
-    const [showMore, setShowMore] = useState(false)
+    const [showMore1, setShowMore1] = useState(false)
+    const [showMore2, setShowMore2] = useState(false)
 
     return (
         <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
@@ -17,8 +18,8 @@ const Sidebar = ({ sidebar }) => {
                 <div className="sidebar-inner">
                     <HomeSection />
                     <Subscription />
-                    <You showMore={showMore} setShowMore={setShowMore} />
-                    <Explore showMore={showMore} setShowMore={setShowMore} />
+                    <You showMore={showMore1} setShowMore={setShowMore1} />
+                    <Explore showMore={showMore2} setShowMore={setShowMore2} />
                     <RHistory />
                     <Footer />
                 </div>
