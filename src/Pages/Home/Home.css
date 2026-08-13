@@ -1,0 +1,16 @@
+.container{
+    height: fit-content;
+    width: calc(100% - 265px);
+    min-height: 80vh;
+    position: absolute;
+    top: 80px;
+    left: 265px;
+    background: #f9f9f9;
+    background: red;
+
+}
+.large-container{
+    position: absolute;
+    left: 85px;
+    width: calc((100% - 85px));
+}
