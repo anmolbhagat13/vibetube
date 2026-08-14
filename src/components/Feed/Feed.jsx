@@ -27,7 +27,7 @@ const Feed = () => {
                         <h3>Greatstack</h3>
                         <p>15k views &bull; 2 days ago</p>
                     </div>
-                    <button><img className='options' src={options} alt="" /></button>
+                    <img className='options' src={options} alt="" />
                 </div>
             </Link>
             <div className="card">
@@ -43,7 +43,7 @@ const Feed = () => {
                         <h3>Greatstack</h3>
                         <p>15k views &bull; 2 days ago</p>
                     </div>
-                    <button><img className='options' src={options} alt="" /></button>
+                    <img className='options' src={options} alt="" />
                 </div>
             </div>
             <div className="card">
@@ -59,7 +59,7 @@ const Feed = () => {
                         <h3>Greatstack</h3>
                         <p>15k views &bull; 2 days ago</p>
                     </div>
-                    <button><img className='options' src={options} alt="" /></button>
+                    <img className='options' src={options} alt="" />
                 </div>
             </div>
             <div className="card">
@@ -75,7 +75,7 @@ const Feed = () => {
                         <h3>Greatstack</h3>
                         <p>15k views &bull; 2 days ago</p>
                     </div>
-                    <button><img className='options' src={options} alt="" /></button>
+                    <img className='options' src={options} alt="" />
                 </div>
             </div>
             <div className="card">
@@ -90,7 +90,8 @@ const Feed = () => {
                         <h2>Best channel to learn coding that help you to be a webdeveloper</h2>
                         <h3>Greatstack</h3>
                         <p>15k views &bull; 2 days ago</p>
-                    </div><button><img className='options' src={options} alt="" /></button>
+                    </div>
+                    <img className='options' src={options} alt="" />
                 </div>
             </div>
             <div className="card">
@@ -106,7 +107,7 @@ const Feed = () => {
                         <h3>Greatstack</h3>
                         <p>15k views &bull; 2 days ago</p>
                     </div>
-                    <button><img className='options' src={options} alt="" /></button>
+                    <img className='options' src={options} alt="" />
                 </div>
             </div>
             <div className="card">
@@ -122,7 +123,7 @@ const Feed = () => {
                         <h3>Greatstack</h3>
                         <p>15k views &bull; 2 days ago</p>
                     </div>
-                    <button><img className='options' src={options} alt="" /></button>
+                    <img className='options' src={options} alt="" />
                 </div>
             </div>
             <div className="card">
@@ -138,7 +139,7 @@ const Feed = () => {
                         <h3>Greatstack</h3>
                         <p>15k views &bull; 2 days ago</p>
                     </div>
-                    <button><img className='options' src={options} alt="" /></button>
+                    <img className='options' src={options} alt="" />
                 </div>
             </div>
         </div >

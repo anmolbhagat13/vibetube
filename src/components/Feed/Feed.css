@@ -3,22 +3,22 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
     grid-column-gap: 16px;
-    grid-row-gap: 30px;
-    gap: 15px;
+    grid-row-gap: 24px;
 }
 
 .card {
-    min-height: 348px;
     min-width: 470px;
     border-radius: 15px;
     text-decoration: none;
+    padding-bottom: 12px;
     cursor: pointer;
 }
 
 .card:hover {
+    outline: 12px solid #cccccc;
     background:#cccccc;
     transition: 0.4s ease ;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .card .video {
@@ -26,7 +26,6 @@
 }
 
 .card img {
-    height: 87%;
     width: 100%;
     border-radius: 15px;
 }
@@ -51,12 +50,12 @@
 }
 
 .video-info {
-    height: fit-content;
     display: flex;
 }
-.video-info button{
-    height: 36px;
+.video-info .options{
+    height: 40px;
     width: 40px;
+    padding: 8px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -65,12 +64,12 @@
     background: transparent;
     cursor: pointer;
 }
-.video-info button:hover{
+.video-info .options:hover{
     background: #bfbfbf;
 }
-.video-info button img{
-    height: 18px;
-    width: 18px;
+.video-info .options{
+    margin-top: -6px;
+    margin-left: auto;
 }
 
 
@@ -79,7 +78,6 @@
 }
 
 .video-info-left img {
-    height: 36px;
     width: 36px;
     border-radius: 20px;
     margin: 3px 2px 2px;
