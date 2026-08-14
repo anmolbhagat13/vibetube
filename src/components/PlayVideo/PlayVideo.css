@@ -1,1 +1,160 @@
-    
+.play-video {
+    width: 1340px;
+    position: absolute;
+    top: 70px;
+    left: 15px;
+}
+.play-video h3{
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+.play-video video {
+    width: 100%;
+    border-radius: 13px;
+}
+
+.play-video-info {
+    height: 44px;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.play-video h3 {
+    width: 100%;
+}
+
+.channel-info {
+    height: 42px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-side {
+    display: flex;
+    font-weight: 500;
+}
+
+.left-side .btn {
+    height: 40px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-right: 8px;
+    border: none;
+    border-top: 1px solid #ebebeb;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.join-btn {
+    background: #f2f2f2;
+    color: #0e0e0e;
+}
+
+.join-btn:hover {
+    background: #e0e0e0;
+}
+
+.subs-btn {
+    background: #111111;
+    color: #f1f1f1;
+}
+
+.logo {
+    padding-right: 12px;
+}
+
+.logo img {
+    height: 40px;
+    border-radius: 25px;
+}
+
+.channel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 24px;
+    line-height: 1.4;
+    font-size: 16px;
+}
+
+.channel img {
+    width: 14px;
+}
+
+.channel-name {
+    color: #0e0e0e;
+}
+
+.channel-subs {
+    font-size: 12px;
+    color: #606060;
+    margin-right: 4px;
+}
+
+.right-side {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.right-side .rs {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    border-top: 1px solid #ebebeb;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    background: #f2f2f2;
+}
+
+.right-side .rs:hover {
+    background: #e0e0e0;
+}
+
+.right-side .like {
+    border-radius: 20px 0 0 20px;
+    border-right: 1px solid #c6c6c6;
+    margin-right: 0;
+}
+
+.right-side .dislike {
+    border-radius: 0 20px 20px 0;
+}
+
+.right-side .threedots{
+    padding: 8px;
+}
+.right-side .threedots img{
+    padding: 0;
+    height: 24px;
+    width: 24px;
+}
+
+.right-side img {
+    height: 24px;
+    padding-right: 5px;
+}
+
+
+
+.channel-expand-info {
+    height: fit-content;
+    width: 100%;
+    background: #f2f2f2;
+    width: 100%;
+    margin: 12px 12px 0 0;
+    padding: 12px;
+    border-radius: 10px;
+}
+.ce-video-meta{
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
