@@ -1,30 +1,86 @@
-.feed{
+.feed {
+    width: calc(100% - 20px);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
     grid-column-gap: 16px;
     grid-row-gap: 30px;
+    gap: 15px;
 }
-.card{
+
+.card {
+    min-height: 348px;
+    min-width: 470px;
+    border-radius: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.card:hover {
+    background:#cccccc;
+    transition: 0.4s ease ;
+    border-radius: 15px;
+}
+
+.card .video {
+    padding-bottom: 10px;
+}
+
+.card img {
+    height: 87%;
     width: 100%;
-    border: 1px solid black;
+    border-radius: 15px;
 }
-.card img{
-    width: 100%;
-    height: 250.11px;
-    border-radius: 5px;
-}
-.card h2{
+
+.card h2 {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
+    padding-right: 24px;
     color: #000;
-    margin: 5px 0;
 }
-.card h3{
+
+.card h3 {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     color: #555;
-    margin: 6px 0;
+    margin-top: 2px;
 }
-.card p{
+
+.card p {
+    margin-top: 2px;
     font-size: 14px;
+}
+
+.video-info {
+    height: fit-content;
+    display: flex;
+}
+.video-info button{
+    height: 36px;
+    width: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.video-info button:hover{
+    background: #bfbfbf;
+}
+.video-info button img{
+    height: 18px;
+    width: 18px;
+}
+
+
+.video-info-left {
+    margin-right: 12px;
+}
+
+.video-info-left img {
+    height: 36px;
+    width: 36px;
+    border-radius: 20px;
+    margin: 3px 2px 2px;
 }
