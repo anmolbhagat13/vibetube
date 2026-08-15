@@ -17,7 +17,7 @@
 .card:hover {
     outline: 12px solid #cccccc;
     background:#cccccc;
-    transition: 0.4s ease ;
+    transition: 0.4s ease;
     border-radius: 10px;
 }
 

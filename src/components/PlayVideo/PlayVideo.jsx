@@ -43,6 +43,10 @@ const PlayVideo = () => {
                     <p>1,525 views</p>
                     <p>2 days ago</p>
                 </div>
+                <div className="ce-vid-description">
+                    <p>Channel that makes learning easy</p>
+                    <p>Subscribe GreatStack to watch more tutorials on web development</p>
+                </div>
             </div>
         </div>
     )
