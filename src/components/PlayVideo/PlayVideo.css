@@ -160,10 +160,61 @@
     gap: 5px;
     font-size: 14px;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .ce-vid-description {
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.5;
+}
+
+.comments {
+    width: 100%;
+    height: fit-content;
+    margin: 24px 0 32px;
+}
+
+.comment-head {
+    height: 28px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.comment-head h3 {
+    margin: 0;
+}
+
+.comment-head .sort {
+    height: 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0e0e0e;
+    display: flex;
+    align-items: center;
+    width: 115px;
+    white-space: nowrap;
+}
+
+.comment-head .sort img {
+    height: 22px;
+    margin-right: 8px;
+}
+
+.comments .cmt-profile {
+    display: flex;
+}
+
+.cmt-profile span img {
+    height: 24px;
+    margin-right: 10px;
+}
+.cmt-profile input{
+    height: 25px;
+    width: calc(100% - 50px);
+    color: #606060;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #cccccc;
 }

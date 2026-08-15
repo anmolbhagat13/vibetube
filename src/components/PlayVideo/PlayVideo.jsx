@@ -9,6 +9,8 @@ import share from '../../assets/share.png'
 import ask from '../../assets/ask.png'
 import save from '../../assets/save.svg'
 import threedots from '../../assets/threedots.png'
+import sort from '../../assets/sort.svg'
+import profile from '../../assets/profile.png'
 
 const PlayVideo = () => {
     return (
@@ -47,6 +49,18 @@ const PlayVideo = () => {
                     <p>Channel that makes learning easy</p>
                     <p>Subscribe GreatStack to watch more tutorials on web development</p>
                 </div>
+            </div>
+            <div className="comments">
+                <div className="comment-head">
+                    <h3><span>318</span> Comments</h3>
+                    <span className='sort'><img src={sort} alt="" />Sort by</span>
+                </div>
+                <div className="cmt-profile">
+                    <span className='cmt-profile-pic'><img src={profile} alt="" /></span>
+                    <input type="text" placeholder='Add a comment...' />
+                </div>
+
+
             </div>
         </div>
     )
