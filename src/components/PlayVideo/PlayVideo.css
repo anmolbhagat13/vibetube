@@ -281,6 +281,7 @@
     margin-left: -8.5px;
     height: 40px;
     width: 40px;
+    border-radius: 20px;
 }
 .cmt-footer .emoji:hover{
     background: #cccccc;
