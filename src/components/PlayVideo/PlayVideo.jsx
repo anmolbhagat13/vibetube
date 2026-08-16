@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './PlayVideo.css'
 import video from '../../assets/videoplayback.mp4'
 import channel from '../../assets/channel.jpg'
@@ -11,8 +11,11 @@ import save from '../../assets/save.svg'
 import threedots from '../../assets/threedots.png'
 import sort from '../../assets/sort.svg'
 import profile from '../../assets/profile.png'
-
+import edit from '../../assets/edit.svg'
+import emoji from '../../assets/emoji.png'
 const PlayVideo = () => {
+
+    const [cmt, setCmt] = useState(false)
     return (
         <div className='play-video'>
             <video src={video} controls autoPlay muted></video>
@@ -55,12 +58,43 @@ const PlayVideo = () => {
                     <h3><span>318</span> Comments</h3>
                     <span className='sort'><img src={sort} alt="" />Sort by</span>
                 </div>
-                <div className="cmt-profile">
-                    <span className='cmt-profile-pic'><img src={profile} alt="" /></span>
-                    <input type="text" placeholder='Add a comment...' />
-                </div>
-
-
+                {!cmt && (
+                    <div className="cmt-profile">
+                        <span className='cmt-profile-pic'><img src={profile} alt="" /></span>
+                        <input onClick={() => { setCmt(true) }} type="text" placeholder='Add a comment...' />
+                    </div>
+                )}
+                {cmt && (
+                    <div className="cmt-profile-clicked">
+                        <p className='cmt-as'>Commenting as</p>
+                        <div className="cmt-profile-box">
+                            <img className='cmt-profile-box-img' src={profile} alt="" />
+                            <div className="cmt-profile-box-info">
+                                <p>User Name</p>
+                                <p>@UserName-b3y</p>
+                            </div>
+                            <div className='cmt-edit'>
+                                <img src={edit} alt="" />
+                            </div>
+                        </div>
+                        <div className="cmt-input">
+                            <input type="text" />
+                        </div>
+                        <div className="cmt-footer">
+                            <div className="emoji">
+                                <img src={emoji} alt="" />
+                            </div>
+                            <div className="btns">
+                                <div className="cancel-btn">
+                                    <button onClick={() => { setCmt(false) }} >Cancel</button>
+                                </div>
+                                <div className="comment-btn">
+                                    <button>Comment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     )

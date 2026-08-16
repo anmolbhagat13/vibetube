@@ -210,7 +210,8 @@
     height: 24px;
     margin-right: 10px;
 }
-.cmt-profile input{
+
+.cmt-profile input {
     height: 25px;
     width: calc(100% - 50px);
     color: #606060;
@@ -218,3 +219,96 @@
     outline: none;
     border-bottom: 1px solid #cccccc;
 }
+
+
+.cmt-profile-clicked .cmt-as {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.cmt-profile-box {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.cmt-profile-box-img {
+    height: 36px;
+}
+
+.cmt-profile-box-info {
+    margin: 0 20px 0 10px;
+}
+.cmt-profile-box-info p{
+    height: 18px;
+}
+
+.cmt-edit {
+    height: 38px;
+    margin-left: 10px;
+}
+
+.cmt-edit img {
+    margin-top: 11px;
+    height: 21px;
+}
+.cmt-input{
+    min-height: 25px;
+    border-bottom: 1px solid #cccccc;
+    width: calc(100% - 20px);
+}
+.cmt-input input{
+    height: 20px;
+    width: calc(100% - 20px);
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+.cmt-footer{
+    height: 40px;
+    width: calc(100% - 20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+.cmt-footer .emoji{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -8.5px;
+    height: 40px;
+    width: 40px;
+}
+.cmt-footer .emoji:hover{
+    background: #cccccc;
+}
+.cmt-footer .emoji img{
+    height: 24px;
+}
+.btns{
+    display: flex;
+    gap: 10px;
+}
+.btns button{
+    height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    background: none;
+}
+.cancel-btn{
+    border-radius: 20px;
+}
+.comment-btn{
+    border-radius: 20px;
+    opacity: 0.5;
+    background: #ececec;
+}
+.cancel-btn:hover{
+    background: #cccccc;
+}
+
