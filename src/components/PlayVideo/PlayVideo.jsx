@@ -16,7 +16,6 @@ import emoji from '../../assets/emoji.png'
 const PlayVideo = () => {
 
     const [cmt, setCmt] = useState(false)
-    const [bcng, setBcng] = useState(false)
 
     return (
         <div className='play-video'>

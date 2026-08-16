@@ -143,8 +143,6 @@
     padding-right: 5px;
 }
 
-
-
 .channel-expand-info {
     height: fit-content;
     width: 100%;
@@ -220,7 +218,6 @@
     border-bottom: 1px solid #cccccc;
 }
 
-
 .cmt-profile-clicked .cmt-as {
     font-size: 14px;
     margin-bottom: 8px;
@@ -241,7 +238,8 @@
 .cmt-profile-box-info {
     margin: 0 20px 0 10px;
 }
-.cmt-profile-box-info p{
+
+.cmt-profile-box-info p {
     height: 18px;
 }
 
@@ -254,19 +252,22 @@
     margin-top: 11px;
     height: 21px;
 }
-.cmt-input{
+
+.cmt-input {
     min-height: 25px;
     border-bottom: 1px solid #cccccc;
     width: calc(100% - 20px);
 }
-.cmt-input input{
+
+.cmt-input input {
     height: 20px;
     width: calc(100% - 20px);
     border: none;
     outline: none;
     font-size: 14px;
 }
-.cmt-footer{
+
+.cmt-footer {
     height: 40px;
     width: calc(100% - 20px);
     display: flex;
@@ -274,7 +275,8 @@
     justify-content: space-between;
     margin-top: 8px;
 }
-.cmt-footer .emoji{
+
+.cmt-footer .emoji {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -283,17 +285,21 @@
     width: 40px;
     border-radius: 20px;
 }
-.cmt-footer .emoji:hover{
+
+.cmt-footer .emoji:hover {
     background: #cccccc;
 }
-.cmt-footer .emoji img{
+
+.cmt-footer .emoji img {
     height: 24px;
 }
-.btns{
+
+.btns {
     display: flex;
     gap: 10px;
 }
-.btns button{
+
+.btns button {
     height: 40px;
     padding: 0 16px;
     font-size: 14px;
@@ -301,15 +307,17 @@
     border: none;
     background: none;
 }
-.cancel-btn{
+
+.cancel-btn {
     border-radius: 20px;
 }
-.comment-btn{
+
+.comment-btn {
     border-radius: 20px;
     opacity: 0.5;
     background: #ececec;
 }
-.cancel-btn:hover{
+
+.cancel-btn:hover {
     background: #cccccc;
 }
-
