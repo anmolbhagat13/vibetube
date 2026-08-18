@@ -321,3 +321,131 @@
 .cancel-btn:hover {
     background: #cccccc;
 }
+
+.cc-pic {
+    margin-right: 16px;
+}
+
+.cc-pic img {
+    height: 36px;
+}
+
+.cc-r-first {
+    height: 20px;
+    font-size: 12px;
+}
+
+.cc-user-name {
+    margin-right: 4px;
+    padding-bottom: 2px;
+    font-weight: 500;
+}
+
+.cc-time {
+    color: #606060;
+}
+.cc-time:hover{
+    color: #000;
+}
+
+.cc-comment {
+    min-height: 20px;
+    font-size: 14px;
+}
+
+.cc-btns {
+    height: 32px;
+    width: fit-content;
+}
+
+.cc-btns img {
+    height: 16px;
+}
+
+.cc-btns .c-btn {
+    height: 32px;
+    border-radius: 20px;
+}
+
+.cc-btns .c-btn {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    border-radius: 20px;
+}
+
+.cc-btns .c-btn button:hover {
+    background: #cccccc;
+}
+
+.cc-btns button {
+    background: none;
+    border: none;
+}
+
+.like-btn {
+    display: flex;
+    align-items: center;
+    margin-left: -8px;
+    background: none;
+}
+
+.like-btn:hover,
+.dislike-btn:hover {
+    background: #cccccc;
+}
+
+.like-btn-span {
+    color: #606060;
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.like-btn button {
+    width: 16px;
+    border-radius: 20px;
+    background: none;
+    display: flex;
+    align-items: center;
+}
+
+
+.like-btn img {
+    margin-left: 8px;
+}
+
+.dislike-btn {
+    width: 32px;
+    display: flex;
+    justify-content: center;
+}
+.dislike-btn button{
+    height: 16px;
+}
+
+.reply-btn button {
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 12px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.comments-card {
+    min-height: 78px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.cc-btns {
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+}

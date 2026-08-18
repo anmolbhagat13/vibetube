@@ -13,6 +13,7 @@ import sort from '../../assets/sort.svg'
 import profile from '../../assets/profile.png'
 import edit from '../../assets/edit.svg'
 import emoji from '../../assets/emoji.png'
+
 const PlayVideo = () => {
 
     const [cmt, setCmt] = useState(false)
@@ -44,7 +45,7 @@ const PlayVideo = () => {
                     </div>
                 </div>
             </div>
-            <div className="channel-expand-info">
+            <div className="channesetCmtl-expand-info">
                 <div className='ce-video-meta'>
                     <p>1,525 views</p>
                     <p>2 days ago</p>
@@ -54,48 +55,76 @@ const PlayVideo = () => {
                     <p>Subscribe GreatStack to watch more tutorials on web development</p>
                 </div>
             </div>
-            <div className="comments">
-                <div className="comment-head">
-                    <h3><span>318</span> Comments</h3>
-                    <span className='sort'><img src={sort} alt="" />Sort by</span>
+            <div className='comments-main'>
+                <div className="comments">
+                    <div className="comment-head">
+                        <h3><span>318</span> Comments</h3>
+                        <span className='sort'><img src={sort} alt="" />Sort by</span>
+                    </div>
+                    {!cmt && (
+                        <div className="cmt-profile">
+                            <span className='cmt-profile-pic'><img src={profile} alt="" /></span>
+                            <input onClick={() => { setCmt(true) }} type="text" placeholder='Add a comment...' />
+                        </div>
+                    )}
+                    {cmt && (
+                        <div className="cmt-profile-clicked">
+                            <p className='cmt-as'>Commenting as</p>
+                            <div className="cmt-profile-box">
+                                <img className='cmt-profile-box-img' src={profile} alt="" />
+                                <div className="cmt-profile-box-info">
+                                    <p>User Name</p>
+                                    <p>@UserName-b3y</p>
+                                </div>
+                                <div className='cmt-edit'>
+                                    <img src={edit} alt="" />
+                                </div>
+                            </div>
+                            <div className="cmt-input">
+                                <input type="text" />
+                            </div>
+                            <div className="cmt-footer">
+                                <div className="emoji">
+                                    <img src={emoji} alt="" />
+                                </div>
+                                <div className="btns">
+                                    <div className="cancel-btn">
+                                        <button onClick={() => { setCmt(false) }} >Cancel</button>
+                                    </div>
+                                    <div className="comment-btn">
+                                        <button>Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
-                {!cmt && (
-                    <div className="cmt-profile">
-                        <span className='cmt-profile-pic'><img src={profile} alt="" /></span>
-                        <input onClick={() => { setCmt(true) }} type="text" placeholder='Add a comment...' />
+                <div className="comments-card">
+                    <div className="cc-left">
+                        <div className="cc-pic">
+                            <img src={profile} alt="" />
+                        </div>
                     </div>
-                )}
-                {cmt && (
-                    <div className="cmt-profile-clicked">
-                        <p className='cmt-as'>Commenting as</p>
-                        <div className="cmt-profile-box">
-                            <img className='cmt-profile-box-img' src={profile} alt="" />
-                            <div className="cmt-profile-box-info">
-                                <p>User Name</p>
-                                <p>@UserName-b3y</p>
-                            </div>
-                            <div className='cmt-edit'>
-                                <img src={edit} alt="" />
-                            </div>
+                    <div className="cc-right">
+                        <div className="cc-r-first">
+                            <span className="cc-user-name">@Soumojitdas107</span>
+                            <span className='cc-time'>1 year ago</span>
                         </div>
-                        <div className="cmt-input">
-                            <input type="text" />
-                        </div>
-                        <div className="cmt-footer">
-                            <div className="emoji">
-                                <img src={emoji} alt="" />
+                        <span className="cc-comment">this awara ad is just disturbing!!</span>
+                        <div className="cc-btns">
+                            <div className="like-btn c-btn">
+                                <button><img src={like} alt="" /></button>
                             </div>
-                            <div className="btns">
-                                <div className="cancel-btn">
-                                    <button onClick={() => { setCmt(false) }} >Cancel</button>
-                                </div>
-                                <div className="comment-btn">
-                                    <button>Comment</button>
-                                </div>
+                            <span className='like-btn-span'>86</span>
+                            <div className="dislike-btn c-btn">
+                                <button><img src={dislike} alt="" /></button>
+                            </div>
+                            <div className="reply-btn c-btn">
+                                <button>Reply</button>
                             </div>
                         </div>
                     </div>
-                )}
+                </div>
             </div>
         </div>
     )
