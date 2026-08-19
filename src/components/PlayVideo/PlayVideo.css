@@ -406,6 +406,8 @@
     width: 16px;
     border-radius: 20px;
     background: none;
+    height: 32px;
+    width: 32px;
     display: flex;
     align-items: center;
 }
@@ -417,11 +419,18 @@
 
 .dislike-btn {
     width: 32px;
-    display: flex;
-    justify-content: center;
 }
 .dislike-btn button{
-    height: 16px;
+    height: 32px;
+    width: 32px;
+    border-radius: 20px;
+    position: relative;
+}
+.dislike-btn img{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+
 }
 
 .reply-btn button {
