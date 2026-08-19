@@ -1,0 +1,101 @@
+.vid-card-layout {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    width: 525px;
+}
+
+.vid-recommend {
+    height: 40px;
+    display: flex;
+    gap: 8px
+}
+
+.vid-recommend .btn {
+    display: flex;
+    height: 32px;
+}
+
+.vid-recommend .btn button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #161616;
+    background: #f2f2f2;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    outline: black;
+}
+
+.vid-recommend .all-btn button {
+    color: #f1f1f1;
+    background: #161616;
+    outline: black;
+}
+
+.vid-card {
+    display: flex;
+    border-radius: 18px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.vid-card .vc-left img {
+    width: 325px;
+    border-radius: 15px;
+}
+
+.vc-right {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.vc-right .vid-info {
+    display: flex;
+    width: 100%;
+}
+
+.vid-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-name,
+.vid-details {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.9;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.channel-name span,
+.vid-details span {
+    color: #6b6b6b;
+}
+.channel-name img{
+    height: 16px;
+}
+.vid-details img {
+    height: 10px
+}
+
+.options{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: #f2f2f2;
+    border-radius: 20px;
+}
+.options img{
+    height: 20px;
+}
