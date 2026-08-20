@@ -1,8 +1,8 @@
 .vid-card-layout {
     position: absolute;
     top: 70px;
-    right: 10px;
-    width: 525px;
+    right: 16px;
+    width: 520px;
 }
 
 .vid-recommend {
@@ -35,9 +35,14 @@
 
 .vid-card {
     display: flex;
-    border-radius: 18px;
-    margin-bottom: 5px;
+    border-radius: 10px;
+    margin-bottom: 8px;
     position: relative;
+}
+
+.vid-card .vc-left {
+    display: flex;
+    align-items: center;
 }
 
 .vid-card .vc-left img {
@@ -94,21 +99,28 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background: #f2f2f2;
+    bottom: 2px;
+    right: 2px;
     border-radius: 20px;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.2s ease;
-
 }
 
 .options img {
     height: 20px;
 }
 
-.vid-card:hover .options{
+.vid-card:hover .options {
     opacity: 1;
     visibility: visible;
+}
+
+.vid-card .options:hover {
+    background-color: #f2f2f2;
+}
+
+.vid-card:hover {
+    outline: 6px solid red;
+    background: red;
 }
