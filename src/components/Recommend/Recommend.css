@@ -62,29 +62,32 @@
     flex-direction: column;
 }
 
-.channel-name,
+.vc-channel-name,
 .vid-details {
     font-size: 12px;
+    margin-top: 5px;
     font-weight: normal;
-    line-height: 1.9;
+    line-height: 1.2;
     width: 100%;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.channel-name span,
+.vc-channel-name span,
 .vid-details span {
     color: #6b6b6b;
 }
-.channel-name img{
+
+.vc-channel-name img {
     height: 16px;
 }
+
 .vid-details img {
     height: 10px
 }
 
-.options{
+.options {
     height: 40px;
     width: 40px;
     display: flex;
@@ -95,7 +98,17 @@
     right: 8px;
     background: #f2f2f2;
     border-radius: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
 }
-.options img{
+
+.options img {
     height: 20px;
+}
+
+.vid-card:hover .options{
+    opacity: 1;
+    visibility: visible;
 }
