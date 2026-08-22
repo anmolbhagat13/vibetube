@@ -13,6 +13,45 @@ import sort from '../../assets/sort.svg'
 import profile from '../../assets/profile.png'
 import edit from '../../assets/edit.svg'
 import emoji from '../../assets/emoji.png'
+import showmore from '../../assets/vt-showmore.svg'
+
+const commentCard = [
+    {
+        profile: profile,
+        userName: "@Soumojitdas107",
+        time: "1 year ago",
+        comment: "this awara ad is just disturbing!!",
+        likeCount: "86"
+    },
+    {
+        profile: profile,
+        userName: "@survivalkingadarsh9788",
+        time: "1 years ago (edited)",
+        comment: "Sir can you make u school management system with CRUD operations parent teacher and student interface attendance management",
+        likeCount: "75"
+    },
+    {
+        profile: profile,
+        userName: "@Soumojitdas107",
+        time: "1 year ago",
+        comment: "this awara ad is just disturbing!!",
+        likeCount: "114"
+    },
+    {
+        profile: profile,
+        userName: "@wanjeeric4885",
+        time: "1 year ago",
+        comment: "I thank you enormously for level in React now, Sir, I am a pure Linguist but I am mastering web dev easily thanks to your tutorials",
+        likeCount: "11"
+    },
+    {
+        profile: profile,
+        userName: "@gloreez4",
+        time: "1 year ago",
+        comment: "Thank you always for this React video with 3 projects. you're the best",
+        likeCount: "12"
+    }
+]
 
 const PlayVideo = () => {
 
@@ -82,7 +121,7 @@ const PlayVideo = () => {
                             </div>
                             <div className="cmt-input">
                                 <input type="text" />
-                            </div>
+                            </div>;
                             <div className="cmt-footer">
                                 <div className="emoji">
                                     <img src={emoji} alt="" />
@@ -99,34 +138,46 @@ const PlayVideo = () => {
                         </div>
                     )}
                 </div>
-                <div className="comments-card">
-                    <div className="cc-left">
-                        <div className="cc-pic">
-                            <img src={profile} alt="" />
+                {commentCard.map((comment) => (
+                    < div className="comments-card" >
+                        <div className="cc-left">
+                            <div className="cc-pic">
+                                <img src={comment.profile} alt="" />
+                            </div>
+                            <div className="c-line"></div>
+                        </div>
+                        <div className="cc-right">
+                            <div className="cc-r-first">
+                                <span className="cc-user-name">{comment.userName}</span>
+                                <span className='cc-time'>{comment.time}</span>
+                            </div>
+                            <span className="cc-comment">{comment.comment}</span>
+                            <div className="cc-btns">
+                                <div className="like-btn c-btn">
+                                    <button><img src={like} alt="" /></button>
+                                </div>
+                                <span className='like-btn-span'>{comment.likeCount}</span>
+                                <div className="dislike-btn c-btn">
+                                    <button><img src={dislike} alt="" /></button>
+                                </div>
+                                <div className="reply-btn c-btn">
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                            <div className="r-reply-btn">
+                                <button>
+                                    <div className="r-reply-box">
+                                        <span>10</span>
+                                        replies
+                                    </div>
+                                    <img src={showmore} alt="" />
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div className="cc-right">
-                        <div className="cc-r-first">
-                            <span className="cc-user-name">@Soumojitdas107</span>
-                            <span className='cc-time'>1 year ago</span>
-                        </div>
-                        <span className="cc-comment">this awara ad is just disturbing!!</span>
-                        <div className="cc-btns">
-                            <div className="like-btn c-btn">
-                                <button><img src={like} alt="" /></button>
-                            </div>
-                            <span className='like-btn-span'>86</span>
-                            <div className="dislike-btn c-btn">
-                                <button><img src={dislike} alt="" /></button>
-                            </div>
-                            <div className="reply-btn c-btn">
-                                <button>Reply</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
-        </div>
+        </div >
     )
 }
 

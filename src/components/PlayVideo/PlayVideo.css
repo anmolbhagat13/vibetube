@@ -322,6 +322,9 @@
     background: #cccccc;
 }
 
+.cc-left{
+    position: relative;
+}
 .cc-pic {
     margin-right: 16px;
 }
@@ -344,7 +347,8 @@
 .cc-time {
     color: #606060;
 }
-.cc-time:hover{
+
+.cc-time:hover {
     color: #000;
 }
 
@@ -420,13 +424,15 @@
 .dislike-btn {
     width: 32px;
 }
-.dislike-btn button{
+
+.dislike-btn button {
     height: 32px;
     width: 32px;
     border-radius: 20px;
     position: relative;
 }
-.dislike-btn img{
+
+.dislike-btn img {
     position: absolute;
     bottom: 8px;
     right: 8px;
@@ -449,12 +455,60 @@
 .comments-card {
     min-height: 78px;
     width: 100%;
+    margin-bottom: 15px;
     display: flex;
     position: relative;
 }
-
+.c-line{
+    position: absolute;
+    left: 15px;
+    min-height: 65px;
+    height: calc(100% - 60px);
+    width: 23px;
+    background: transparent;;
+    border-left: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    border-bottom-left-radius: 15px;
+}
 .cc-btns {
     display: flex;
     align-items: center;
     margin-top: 3px;
+}
+
+.r-reply-btn {
+    height: 40px;
+    width: fit-content;
+    display: flex;
+    margin-left: -15px;
+    margin-top: 12px;
+    border-radius: 20px;
+}
+
+.r-reply-btn button {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+.r-reply-btn button:hover{
+    background: #cccccc;
+}
+
+.r-reply-btn button img {
+    margin-left: 4px;
+    height: 24px;
+}
+
+.r-reply-btn .r-reply-box {
+    display: flex;
+    font-size: 15px;
+    font-weight: 500;
+    gap: 2px;
 }
