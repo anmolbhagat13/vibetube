@@ -13,6 +13,63 @@ import channel from '../../assets/channel.jpg'
 import options from '../../assets/options.svg'
 import { API_KEY } from '../../data'
 
+const formatViews = (views) => {
+    if (views >= 1000000000) {
+        return `${parseFloat((views / 1000000000).toFixed(1))}B`
+    }
+    if (views >= 1000000) {
+        return `${parseFloat((views / 1000000).toFixed(1))}M`
+    }
+    if (views >= 1000) {
+        return `${parseFloat((views / 1000).toFixed(1))}K`
+    }
+    return views
+}
+
+const timeAgo = (date) => {
+    const seconds = Math.floor(
+        (new Date() - new Date(date)) / 1000
+    )
+
+    if (seconds < 60) {
+        return `${seconds} seconds ago`
+    }
+
+    const minutes = Math.floor(seconds / 60)
+
+    if (minutes < 60) {
+        return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`
+    }
+
+    const hours = Math.floor(minutes / 60)
+
+    if (hours < 24) {
+        return `${hours} hour${hours !== 1 ? 's' : ''} ago`
+    }
+
+    const days = Math.floor(hours / 24)
+
+    if (days < 7) {
+        return `${days} day${days !== 1 ? 's' : ''} ago`
+    }
+
+    const weeks = Math.floor(days / 7)
+
+    if (weeks < 5) {
+        return `${weeks} week${weeks !== 1 ? 's' : ''} ago`
+    }
+
+    const months = Math.floor(days / 30)
+
+    if (months < 12) {
+        return `${months} month${months !== 1 ? 's' : ''} ago`
+    }
+
+    const years = Math.floor(days / 365)
+
+    return `${years} year${years !== 1 ? 's' : ''} ago`
+}
+
 const Feed = ({ category }) => {
 
     const [data, setData] = useState([])
@@ -41,7 +98,9 @@ const Feed = ({ category }) => {
                             <div className="video-info-right">
                                 <h2>{item.snippet.title}</h2>
                                 <h3>{item.snippet.channelTitle}</h3>
-                                <p>{item.statistics.viewCount} views &bull; {new Date(item.snippet.publishedAt).toLocaleDateString()} days ago</p>
+                                <p> {formatViews(item.statistics.viewCount)} views &bull;{" "}
+                                    {timeAgo(item.snippet.publishedAt)}
+                                </p>
                             </div>
                             <img className='options' src={options} alt="" />
                         </div>
