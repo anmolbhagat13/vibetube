@@ -15,17 +15,17 @@ import podcasts from '../../../assets/vt-podcasts.png'
 import playables from '../../../assets/vt-playables.png'
 import memberships from '../../../assets/vt-memberships.png'
 
-const Explore = ({showMore,setShowMore}) => {
+const Explore = ({showMore,setShowMore, category,setCategory}) => {
     return (
         <div className="explore big">
             <span>Explore</span>
-            <div className="side-link">
+            <div className={`side-link ${category===0?"active":""}`}onClick={()=>setCategory(0)}>
                 <img src={shopping} alt="" /> <p>Shopping</p>
             </div>
-            <div className="side-link">
+            <div className={`side-link ${category===10?"active":""}`} onClick={()=>setCategory(10)}>
                 <img src={music} alt="" /> <p>Music</p>
             </div>
-            <div className="side-link">
+            <div className={`side-link ${category===30?"active":""}`} onClick={()=>setCategory(30)}>
                 <img src={moviestv} alt="" /> <p>Movies & TV</p>
             </div>
             {!showMore && (
@@ -35,31 +35,31 @@ const Explore = ({showMore,setShowMore}) => {
             )}
             {showMore && (
                 <>
-                    <div className="side-link">
+                    <div className="side-link" onClick={()=>setCategory(0)}>
                         <img src={live} alt="" /> <p>Live</p>
                     </div>
-                    <div className="side-link">
+                    <div className={`side-link ${category===20?"active":""}`} onClick={()=>setCategory(20)}>
                         <img src={gaming} alt="" /> <p>Gaming</p>
                     </div>
-                    <div className="side-link">
+                    <div className={`side-link ${category===25?"active":""}`} onClick={()=>setCategory(25)}>
                         <img src={news} alt="" /> <p>News</p>
                     </div>
-                    <div className="side-link">
+                    <div className={`side-link ${category===17?"active":""}`} onClick={()=>setCategory(17)}>
                         <img src={sports} alt="" /> <p>Sports</p>
                     </div>
-                    <div className="side-link">
+                    <div className={`side-link ${category===0?"active":""}`} onClick={()=>setCategory(0)}>
                         <img src={courses} alt="" /> <p>Courses</p>
                     </div>
-                    <div className="side-link">
+                    <div className={`side-link ${category===0?"active":""}`} onClick={()=>setCategory(0)}>
                         <img src={fashionbeauty} alt="" /> <p>Fashion & Beauty</p>
                     </div>
-                    <div className="side-link">
+                    <div className={`side-link ${category===0?"active":""}`} onClick={()=>setCategory(0)}>
                         <img src={podcasts} alt="" /> <p>Podcasts</p>
                     </div>
-                    <div className="side-link">
+                    <div className={`side-link ${category===0?"active":""}`} onClick={()=>setCategory(0)}>
                         <img src={playables} alt="" /> <p>Playables</p>
                     </div>
-                    <div className="side-link">
+                    <div className={`side-link ${category===0?"active":""}`} onClick={()=>setCategory(0)}>
                         <img src={memberships} alt="" /> <p>Memberships</p>
                     </div>
                     <div onClick={() => { setShowMore(false) }} className="side-link">

@@ -7,7 +7,7 @@ import Explore from './ExploreSection/Explore'
 import RHistory from './ReportHistorySection/RHistory'
 import Footer from './FooterSection/Footer'
 
-const Sidebar = ({ sidebar }) => {
+const Sidebar = ({ sidebar,category,setCategory }) => {
 
     const [showMore1, setShowMore1] = useState(false)
     const [showMore2, setShowMore2] = useState(false)
@@ -16,10 +16,10 @@ const Sidebar = ({ sidebar }) => {
         <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
             <div className="sidebar-content">
                 <div className="sidebar-inner">
-                    <HomeSection />
+                    <HomeSection category={category} setCategory={setCategory} />
                     <Subscription />
                     <You showMore={showMore1} setShowMore={setShowMore1} />
-                    <Explore showMore={showMore2} setShowMore={setShowMore2} />
+                    <Explore showMore={showMore2} setShowMore={setShowMore2} category={category} setCategory={setCategory} />
                     <RHistory />
                     <Footer />
                 </div>

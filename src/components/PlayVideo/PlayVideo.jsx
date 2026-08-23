@@ -138,44 +138,45 @@ const PlayVideo = () => {
                         </div>
                     )}
                 </div>
-                {commentCard.map((comment) => (
-                    < div className="comments-card" >
-                        <div className="cc-left">
-                            <div className="cc-pic">
-                                <img src={comment.profile} alt="" />
-                            </div>
-                            <div className="c-line"></div>
-                        </div>
-                        <div className="cc-right">
-                            <div className="cc-r-first">
-                                <span className="cc-user-name">{comment.userName}</span>
-                                <span className='cc-time'>{comment.time}</span>
-                            </div>
-                            <span className="cc-comment">{comment.comment}</span>
-                            <div className="cc-btns">
-                                <div className="like-btn c-btn">
-                                    <button><img src={like} alt="" /></button>
+                {commentCard.map((comment) => {
+                    return (
+                        < div key={comment.id} className="comments-card" >
+                            <div className="cc-left">
+                                <div className="cc-pic">
+                                    <img src={comment.profile} alt="" />
                                 </div>
-                                <span className='like-btn-span'>{comment.likeCount}</span>
-                                <div className="dislike-btn c-btn">
-                                    <button><img src={dislike} alt="" /></button>
-                                </div>
-                                <div className="reply-btn c-btn">
-                                    <button>Reply</button>
-                                </div>
+                                <div className="c-line"></div>
                             </div>
-                            <div className="r-reply-btn">
-                                <button>
-                                    <div className="r-reply-box">
-                                        <span>10</span>
-                                        replies
+                            <div className="cc-right">
+                                <div className="cc-r-first">
+                                    <span className="cc-user-name">{comment.userName}</span>
+                                    <span className='cc-time'>{comment.time}</span>
+                                </div>
+                                <span className="cc-comment">{comment.comment}</span>
+                                <div className="cc-btns">
+                                    <div className="like-btn c-btn">
+                                        <button><img src={like} alt="" /></button>
                                     </div>
-                                    <img src={showmore} alt="" />
-                                </button>
+                                    <span className='like-btn-span'>{comment.likeCount}</span>
+                                    <div className="dislike-btn c-btn">
+                                        <button><img src={dislike} alt="" /></button>
+                                    </div>
+                                    <div className="reply-btn c-btn">
+                                        <button>Reply</button>
+                                    </div>
+                                </div>
+                                <div className="r-reply-btn">
+                                    <button>
+                                        <div className="r-reply-box">
+                                            <span>10</span>
+                                            replies
+                                        </div>
+                                        <img src={showmore} alt="" />
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                ))}
+                        </div>)
+                })}
             </div>
         </div >
     )
