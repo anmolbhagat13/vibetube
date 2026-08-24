@@ -2,18 +2,16 @@ import React from 'react'
 import './Explore.css'
 import showless from '../../../assets/vt-showless.svg'
 import showmore from '../../../assets/vt-showmore.svg'
-import shopping from '../../../assets/vt-shopping.png'
 import music from '../../../assets/vt-music.png'
 import moviestv from '../../../assets/vt-moviestv.png'
-import live from '../../../assets/vt-live.png'
 import gaming from '../../../assets/vt-gaming.png'
 import news from '../../../assets/vt-news.png'
 import sports from '../../../assets/vt-sports.png'
-import courses from '../../../assets/vt-courses.svg'
 import fashionbeauty from '../../../assets/vt-fashion-beauty.png'
-import podcasts from '../../../assets/vt-podcasts.png'
-import playables from '../../../assets/vt-playables.png'
-import memberships from '../../../assets/vt-memberships.png'
+import comedy from '../../../assets/masks.png'
+import vehicles from '../../../assets/vehicles.png'
+import science from '../../../assets/science.png'
+import pets from '../../../assets/pets.png'
 
 const Explore = ({ showMore, setShowMore, category, setCategory }) => {
     return (
@@ -40,25 +38,22 @@ const Explore = ({ showMore, setShowMore, category, setCategory }) => {
             {showMore && (
                 <>
                     <div className={`side-link ${category === 23 ? "active" : ""}`} onClick={() => setCategory(23)}>
-                        <img src={live} alt="" /> <p>Comedy</p>
-                    </div>
-                    <div className={`side-link ${category === 24 ? "active" : ""}`} onClick={() => setCategory(24)}>
-                        <img src={moviestv} alt="" /> <p>Entertainment</p>
+                        <img src={comedy} alt="" /> <p>Comedy</p>
                     </div>
                     <div className={`side-link ${category === 28 ? "active" : ""}`} onClick={() => setCategory(28)}>
-                        <img src={shopping} alt="" /> <p>Science & Technology</p>
+                        <img src={science} alt="" /> <p>Science & Technology</p>
                     </div>
                     <div className={`side-link ${category === 2 ? "active" : ""}`} onClick={() => setCategory(2)}>
-                        <img src={playables} alt="" /> <p>Autos & Vehicles</p>
+                        <img src={vehicles} alt="" /> <p>Autos & Vehicles</p>
                     </div>
                     <div className={`side-link ${category === 26 ? "active" : ""}`} onClick={() => setCategory(26)}>
                         <img src={fashionbeauty} alt="" /> <p>How-to & Style</p>
                     </div>
                     <div className={`side-link ${category === 1 ? "active" : ""}`} onClick={() => setCategory(1)}>
-                        <img src={podcasts} alt="" /> <p>Film & Animation</p>
+                        <img src={moviestv} alt="" /> <p>Film & Animation</p>
                     </div>
-                    <div className={`side-link ${category === 22 ? "active" : ""}`} onClick={() => setCategory(22)}>
-                        <img src={courses} alt="" /> <p>People & Blogs</p>
+                    <div className={`side-link ${category === 15 ? "active" : ""}`} onClick={() => setCategory(15)}>
+                        <img src={pets} alt="" /> <p>Pets & Animals</p>
                     </div>
                     <div onClick={() => { setShowMore(false) }} className="side-link">
                         <img src={showless} alt="" /> <p>Show less</p>
