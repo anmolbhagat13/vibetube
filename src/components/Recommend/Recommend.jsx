@@ -78,8 +78,8 @@ const Recommend = () => {
                 </div>
             </div>
             {
-                videos.map((video) => (
-                    <div className="vid-card">
+                videos.map((video, index) => (
+                    <div key={index} className="vid-card">
                         <div className="vc-left">
                             <img src={thumbnail2} alt="" />
                         </div>

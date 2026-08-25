@@ -17,6 +17,7 @@ import showmore from '../../assets/vt-showmore.svg'
 
 const commentCard = [
     {
+        id: 1,
         profile: profile,
         userName: "@Soumojitdas107",
         time: "1 year ago",
@@ -24,6 +25,7 @@ const commentCard = [
         likeCount: "86"
     },
     {
+        id: 2,
         profile: profile,
         userName: "@survivalkingadarsh9788",
         time: "1 years ago (edited)",
@@ -31,6 +33,7 @@ const commentCard = [
         likeCount: "75"
     },
     {
+        id: 3,
         profile: profile,
         userName: "@Soumojitdas107",
         time: "1 year ago",
@@ -38,6 +41,7 @@ const commentCard = [
         likeCount: "114"
     },
     {
+        id: 4,
         profile: profile,
         userName: "@wanjeeric4885",
         time: "1 year ago",
@@ -45,6 +49,7 @@ const commentCard = [
         likeCount: "11"
     },
     {
+        id: 5,
         profile: profile,
         userName: "@gloreez4",
         time: "1 year ago",
@@ -53,13 +58,22 @@ const commentCard = [
     }
 ]
 
-const PlayVideo = () => {
-
+const PlayVideo = ({ videoId }) => {
+    // console.log("videoId:", videoId);
     const [cmt, setCmt] = useState(false)
+
+    // console.log("videoId:", videoId);
+    // console.log(
+    //     "iframe:",
+    //     `https://www.youtube.com/embed/${videoId}`
+    // );
 
     return (
         <div className='play-video'>
-            <video src={video} controls autoPlay muted></video>
+            {/* <video src={video} controls autoPlay muted></video> */}
+            <iframe src={`https://www.youtube.com/embed/${videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+
+
             <h3>Best Youtube Channel To Learn Web Development</h3>
             <div className="play-video-info">
                 <div className="channel-info">
