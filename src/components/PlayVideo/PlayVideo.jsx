@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './PlayVideo.css'
-import video from '../../assets/videoplayback.mp4'
 import channel from '../../assets/channel.jpg'
 import tick from '../../assets/tick.svg'
 import like from '../../assets/like.png'
@@ -14,6 +13,8 @@ import profile from '../../assets/profile.png'
 import edit from '../../assets/edit.svg'
 import emoji from '../../assets/emoji.png'
 import showmore from '../../assets/vt-showmore.svg'
+import {API_KEY} from '../../data'
+import { formatViews, timeAgo } from '../../utils/format'
 
 const commentCard = [
     {
@@ -58,15 +59,21 @@ const commentCard = [
     }
 ]
 
-const PlayVideo = ({ videoId }) => {
-    // console.log("videoId:", videoId);
+const PlayVideo = ({ videoId, category, setCategory }) => {
     const [cmt, setCmt] = useState(false)
+    const [videoData, setVideoData] = useState(null)
 
-    // console.log("videoId:", videoId);
-    // console.log(
-    //     "iframe:",
-    //     `https://www.youtube.com/embed/${videoId}`
-    // );
+    useEffect(()=>{
+        const fetchVideo = async ()=>{
+            const response = await fetch(
+                `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${API_KEY}`
+            )
+            const data = await response.json()
+            console.log(data)
+            setVideoData(data.items[0])
+        }
+        fetchVideo()
+    },[videoId])
 
     return (
         <div className='play-video'>
@@ -74,7 +81,7 @@ const PlayVideo = ({ videoId }) => {
             <iframe src={`https://www.youtube.com/embed/${videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
 
-            <h3>Best Youtube Channel To Learn Web Development</h3>
+            <h3>{videoData?.snippet.title}</h3>
             <div className="play-video-info">
                 <div className="channel-info">
                     <div className="left-side">
@@ -82,14 +89,14 @@ const PlayVideo = ({ videoId }) => {
                             <img src={channel} alt="" />
                         </div>
                         <div className="channel">
-                            <p className='channel-name'>GreatStack <img src={tick} alt="" /></p>
+                            <p className='channel-name'>{videoData?.snippet.channelTitle}<img src={tick} alt="" /></p>
                             <p className='channel-subs'>1.23M subscribers</p>
                         </div>
                         <button className='btn join-btn'>Join</button>
                         <button className='btn subs-btn'>Subscribe</button>
                     </div>
                     <div className="right-side">
-                        <span className='like rs'><img src={like} alt="" />125</span>
+                        <span className='like rs'><img src={like} alt="" />{formatViews(videoData?.statistics.likeCount)}</span>
                         <span className='dislike rs'><img src={dislike} alt="" /></span>
                         <span className='rs'><img src={share} alt="" />Share</span>
                         <span className='rs'><img src={ask} alt="" />Ask</span>
@@ -100,18 +107,17 @@ const PlayVideo = ({ videoId }) => {
             </div>
             <div className="channesetCmtl-expand-info">
                 <div className='ce-video-meta'>
-                    <p>1,525 views</p>
-                    <p>2 days ago</p>
+                    <p>{formatViews(videoData?.statistics.viewCount)} views</p>
+                    <p>{timeAgo(videoData?.snippet.publishedAt)}</p>
                 </div>
                 <div className="ce-vid-description">
-                    <p>Channel that makes learning easy</p>
-                    <p>Subscribe GreatStack to watch more tutorials on web development</p>
+                    <p>{videoData?.snippet.description}</p>
                 </div>
             </div>
             <div className='comments-main'>
                 <div className="comments">
                     <div className="comment-head">
-                        <h3><span>318</span> Comments</h3>
+                        <h3><span>{videoData?.statistics.commentCount}</span> Comments</h3>
                         <span className='sort'><img src={sort} alt="" />Sort by</span>
                     </div>
                     {!cmt && (

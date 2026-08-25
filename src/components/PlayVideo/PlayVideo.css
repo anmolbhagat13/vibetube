@@ -512,3 +512,6 @@
     font-weight: 500;
     gap: 2px;
 }
+.ce-vid-description{
+    white-space: pre-line;
+}
