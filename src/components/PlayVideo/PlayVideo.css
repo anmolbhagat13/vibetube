@@ -332,6 +332,7 @@
 
 .cc-pic img {
     height: 36px;
+    border-radius: 20px;
 }
 
 .cc-r-first {
