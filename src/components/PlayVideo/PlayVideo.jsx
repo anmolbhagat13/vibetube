@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './PlayVideo.css'
-import channel from '../../assets/channel.jpg'
 import tick from '../../assets/tick.svg'
 import like from '../../assets/like.png'
 import dislike from '../../assets/dislike.png'
@@ -62,7 +61,7 @@ const commentCard = [
 const PlayVideo = ({ videoId, category, setCategory }) => {
     const [cmt, setCmt] = useState(false)
     const [videoData, setVideoData] = useState(null)
-
+    const [channelData, setChannelData] = useState(null)
     useEffect(()=>{
         const fetchVideo = async ()=>{
             const response = await fetch(
@@ -74,6 +73,19 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
         }
         fetchVideo()
     },[videoId])
+    useEffect(()=>{
+        if(!videoData?.snippet.channelId) return
+
+        const fetchChannel = async ()=>{
+            const response = await fetch(
+                `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${videoData.snippet.channelId}&key=${API_KEY}`
+            )
+            const data = await response.json()
+            console.log(data)
+            setChannelData(data.items[0])
+        }
+        fetchChannel()
+    },[videoData])
 
     return (
         <div className='play-video'>
@@ -86,11 +98,11 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
                 <div className="channel-info">
                     <div className="left-side">
                         <div className="logo">
-                            <img src={channel} alt="" />
+                            <img src={channelData?.snippet.thumbnails.medium.url} alt="" />
                         </div>
                         <div className="channel">
                             <p className='channel-name'>{videoData?.snippet.channelTitle}<img src={tick} alt="" /></p>
-                            <p className='channel-subs'>1.23M subscribers</p>
+                            <p className='channel-subs'>{formatViews(channelData?.statistics.subscriberCount)} subscribers</p>
                         </div>
                         <button className='btn join-btn'>Join</button>
                         <button className='btn subs-btn'>Subscribe</button>

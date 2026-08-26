@@ -9,7 +9,6 @@ import thumbnail6 from '../../assets/thumbnail6.png'
 import thumbnail7 from '../../assets/thumbnail7.png'
 import thumbnail8 from '../../assets/thumbnail8.png'
 import { Link } from 'react-router-dom'
-import channel from '../../assets/channel.jpg'
 import options from '../../assets/options.svg'
 import { API_KEY } from '../../data'
 import { formatViews, timeAgo } from '../../utils/format'
@@ -17,10 +16,34 @@ import { formatViews, timeAgo } from '../../utils/format'
 const Feed = ({ category }) => {
 
     const [data, setData] = useState([])
+    const [channelData, setChannelData] = useState({})
 
     const fetchData = async () => {
         const videoList_url = `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&videoCategoryId=${category}&key=${API_KEY}`
-        await fetch(videoList_url).then(response => response.json()).then(data => setData(data.items))
+
+        const response = await fetch(videoList_url)
+        const data = await response.json()
+
+        setData(data.items)
+
+        const channelIds = [
+            ...new Set(data.items.map(item => item.snippet.channelId))
+        ].join(',')
+
+        const channelResponse = await fetch(
+            `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelIds}&key=${API_KEY}`
+        )
+
+        const channelResult = await channelResponse.json()
+
+        const channels = {}
+
+        channelResult.items.forEach(channel => {
+            channels[channel.id] =
+                channel.snippet.thumbnails.default.url
+        })
+
+        setChannelData(channels)
     }
 
     useEffect(() => {
@@ -37,7 +60,10 @@ const Feed = ({ category }) => {
                         </div>
                         <div className="video-info">
                             <div className="video-info-left">
-                                <img src={channel} alt="" />
+                                <img
+                                    src={channelData[item.snippet.channelId]}
+                                    alt=""
+                                />
                             </div>
                             <div className="video-info-right">
                                 <h2>{item.snippet.title}</h2>
