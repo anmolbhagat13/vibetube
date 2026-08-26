@@ -38,6 +38,7 @@
     border-radius: 10px;
     margin-bottom: 8px;
     position: relative;
+    text-decoration: none;
 }
 
 .vid-card .vc-left {
@@ -56,8 +57,11 @@
     padding: 0 8px;
     cursor: pointer;
 }
+.vid-name{
+    text-decoration: none;
+}
 
-.vc-right .vid-info {
+.c-right .vid-info {
     display: flex;
     width: 100%;
 }
@@ -121,6 +125,6 @@
 }
 
 .vid-card:hover {
-    outline: 6px solid red;
-    background: red;
+    outline: 6px solid #ccc;
+    background: #ccc;
 }
