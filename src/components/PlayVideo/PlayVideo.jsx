@@ -12,58 +12,16 @@ import profile from '../../assets/profile.png'
 import edit from '../../assets/edit.svg'
 import emoji from '../../assets/emoji.png'
 import showmore from '../../assets/vt-showmore.svg'
-import {API_KEY} from '../../data'
+import { API_KEY } from '../../data'
 import { formatViews, timeAgo } from '../../utils/format'
-
-const commentCard = [
-    {
-        id: 1,
-        profile: profile,
-        userName: "@Soumojitdas107",
-        time: "1 year ago",
-        comment: "this awara ad is just disturbing!!",
-        likeCount: "86"
-    },
-    {
-        id: 2,
-        profile: profile,
-        userName: "@survivalkingadarsh9788",
-        time: "1 years ago (edited)",
-        comment: "Sir can you make u school management system with CRUD operations parent teacher and student interface attendance management",
-        likeCount: "75"
-    },
-    {
-        id: 3,
-        profile: profile,
-        userName: "@Soumojitdas107",
-        time: "1 year ago",
-        comment: "this awara ad is just disturbing!!",
-        likeCount: "114"
-    },
-    {
-        id: 4,
-        profile: profile,
-        userName: "@wanjeeric4885",
-        time: "1 year ago",
-        comment: "I thank you enormously for level in React now, Sir, I am a pure Linguist but I am mastering web dev easily thanks to your tutorials",
-        likeCount: "11"
-    },
-    {
-        id: 5,
-        profile: profile,
-        userName: "@gloreez4",
-        time: "1 year ago",
-        comment: "Thank you always for this React video with 3 projects. you're the best",
-        likeCount: "12"
-    }
-]
 
 const PlayVideo = ({ videoId, category, setCategory }) => {
     const [cmt, setCmt] = useState(false)
     const [videoData, setVideoData] = useState(null)
     const [channelData, setChannelData] = useState(null)
-    useEffect(()=>{
-        const fetchVideo = async ()=>{
+    const [comments, setComments] = useState([])
+    useEffect(() => {
+        const fetchVideo = async () => {
             const response = await fetch(
                 `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${API_KEY}`
             )
@@ -72,11 +30,11 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
             setVideoData(data.items[0])
         }
         fetchVideo()
-    },[videoId])
-    useEffect(()=>{
-        if(!videoData?.snippet.channelId) return
+    }, [videoId])
+    useEffect(() => {
+        if (!videoData?.snippet.channelId) return
 
-        const fetchChannel = async ()=>{
+        const fetchChannel = async () => {
             const response = await fetch(
                 `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${videoData.snippet.channelId}&key=${API_KEY}`
             )
@@ -85,12 +43,29 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
             setChannelData(data.items[0])
         }
         fetchChannel()
-    },[videoData])
+    }, [videoData])
+
+    useEffect(() => {
+        const fetchComments = async () => {
+            const response = await fetch(
+                `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=30&key=${API_KEY}`
+            )
+            if(!response.ok){
+                setComments([])
+                return
+            }
+            const data = await response.json()
+            console.log(data);
+            setComments(data.items)
+
+        }
+        fetchComments()
+    }, [videoId])
 
     return (
         <div className='play-video'>
             {/* <video src={video} controls autoPlay muted></video> */}
-            <iframe src={`https://www.youtube.com/embed/${videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
 
             <h3>{videoData?.snippet.title}</h3>
@@ -153,7 +128,7 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
                             </div>
                             <div className="cmt-input">
                                 <input type="text" />
-                            </div>;
+                            </div>
                             <div className="cmt-footer">
                                 <div className="emoji">
                                     <img src={emoji} alt="" />
@@ -170,26 +145,27 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
                         </div>
                     )}
                 </div>
-                {commentCard.map((comment) => {
+                {comments.map((item) => {
+                    const comment = item.snippet.topLevelComment.snippet
                     return (
-                        < div key={comment.id} className="comments-card" >
+                        < div key={item.id} className="comments-card" >
                             <div className="cc-left">
                                 <div className="cc-pic">
-                                    <img src={comment.profile} alt="" />
+                                    <img src={comment.authorProfileImageUrl} alt="" />
                                 </div>
                                 <div className="c-line"></div>
                             </div>
                             <div className="cc-right">
                                 <div className="cc-r-first">
-                                    <span className="cc-user-name">{comment.userName}</span>
-                                    <span className='cc-time'>{comment.time}</span>
+                                    <span className="cc-user-name">{comment.authorDisplayName}</span>
+                                    <span className='cc-time'>{timeAgo(comment.publishedAt)}</span>
                                 </div>
-                                <span className="cc-comment">{comment.comment}</span>
+                                <span className="cc-comment">{comment.textDisplay}</span>
                                 <div className="cc-btns">
                                     <div className="like-btn c-btn">
                                         <button><img src={like} alt="" /></button>
                                     </div>
-                                    <span className='like-btn-span'>{comment.likeCount}</span>
+                                    <span className='like-btn-span'>{formatViews(comment.likeCount)}</span>
                                     <div className="dislike-btn c-btn">
                                         <button><img src={dislike} alt="" /></button>
                                     </div>
@@ -200,7 +176,7 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
                                 <div className="r-reply-btn">
                                     <button>
                                         <div className="r-reply-box">
-                                            <span>10</span>
+                                            <span>{item.snippet.totalReplyCount}</span>
                                             replies
                                         </div>
                                         <img src={showmore} alt="" />
