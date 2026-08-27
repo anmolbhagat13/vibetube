@@ -1,0 +1,15 @@
+.play-container {
+    display: grid;
+    grid-template-columns: 2.6fr 1.01fr;
+    gap: 15px;
+    padding: 20px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .play-container {
+        grid-template-columns: 1fr;
+    }
+
+}

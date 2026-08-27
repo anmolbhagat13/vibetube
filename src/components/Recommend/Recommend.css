@@ -1,8 +1,6 @@
 .vid-card-layout {
-    position: absolute;
-    top: 70px;
-    right: 16px;
-    width: 520px;
+    width: 100%;
+    margin-top: 45px;
 }
 
 .vid-recommend {
@@ -35,9 +33,9 @@
 
 .vid-card {
     display: flex;
+    width: 100%;
     border-radius: 10px;
     margin-bottom: 8px;
-    position: relative;
     text-decoration: none;
 }
 

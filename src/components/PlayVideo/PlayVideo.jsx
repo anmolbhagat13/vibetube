@@ -26,7 +26,6 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
                 `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${API_KEY}`
             )
             const data = await response.json()
-            console.log(data)
             setVideoData(data.items[0])
         }
 
@@ -41,7 +40,6 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
                 `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${videoData.snippet.channelId}&key=${API_KEY}`
             )
             const data = await response.json()
-            console.log(data)
             setChannelData(data.items[0])
         }
 
@@ -51,7 +49,7 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
     useEffect(() => {
         const fetchComments = async () => {
             const response = await fetch(
-                `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=30&key=${API_KEY}`
+                `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=35&key=${API_KEY}`
             )
 
             if (!response.ok) {
@@ -60,7 +58,6 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
             }
 
             const data = await response.json()
-            console.log(data)
             setComments(data.items)
         }
 
@@ -148,7 +145,7 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
                 </div>
             </div>
 
-            <div className="channesetCmtl-expand-info">
+            <div className="channel-expand-info">
 
                 <div className='ce-video-meta'>
                     <p>
