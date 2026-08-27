@@ -515,3 +515,27 @@
 .ce-vid-description{
     white-space: pre-line;
 }
+
+.ce-vid-description{
+    height: 40px;
+    overflow: hidden;
+}
+.ce-vid-description.expanded{
+    height: auto;
+}
+.description-toggle{
+    border: none;
+    background: none;
+    padding: 0;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+.description-toggle.expanded{
+    margin-top: 40px;
+}
+/* .ce-vid-description:hover{
+    background: #eff4ff;
+} */

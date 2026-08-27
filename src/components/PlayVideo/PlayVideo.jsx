@@ -19,6 +19,7 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
     const [videoData, setVideoData] = useState(null)
     const [channelData, setChannelData] = useState(null)
     const [comments, setComments] = useState([])
+    const [showDescription, setShowDescription] = useState(false)
 
     useEffect(() => {
         const fetchVideo = async () => {
@@ -49,7 +50,7 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
     useEffect(() => {
         const fetchComments = async () => {
             const response = await fetch(
-                `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=35&key=${API_KEY}`
+                `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=40&key=${API_KEY}`
             )
 
             if (!response.ok) {
@@ -157,9 +158,13 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
                     </p>
                 </div>
 
-                <div className="ce-vid-description">
+                <div className={`ce-vid-description ${showDescription ? 'expanded' : ''}`}>
                     <p>{videoData?.snippet.description}</p>
                 </div>
+                <button className={`description-toggle ${showDescription ? 'expanded' : ''}`}
+                    onClick={() => setShowDescription(!showDescription)}>
+                    {showDescription ? 'Show less' : '...more'}
+                </button>
 
             </div>
 
