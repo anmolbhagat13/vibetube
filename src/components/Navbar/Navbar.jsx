@@ -14,7 +14,7 @@ const Navbar = ({ setSidebar }) => {
     return (
         <nav>
             <div className="nav-left">
-                <button onClick={() => setSidebar(prev => prev === false ? true : false)} className='menu-btn'><Menu size={23} /></button>
+                <button onClick={() => setSidebar(prev => prev === false ? true : false)} className='menu-btn'><Menu size={23} className='menu-icon'/></button>
                 <Link to='/'>
                     <div className="vt-icon">
                         <img className='icon-img' src={Icon} alt="" />

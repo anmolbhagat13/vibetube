@@ -10,7 +10,7 @@ nav {
     left: 0;
     box-sizing: border-box;
     z-index: 1000;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
 }
 
@@ -50,21 +50,20 @@ nav {
     align-items: center;
     justify-content: center;
     height: 56px;
-    width: 100%;
     gap: 15px;
-    flex: 1;
 }
 
 .nav-mid .search {
+    display: flex;
+    width: clamp(300px, 40vw, 650px);
+    min-width: 0;
     border: 1px solid #b5b5b5;
     border-radius: 20px;
-    display: flex;
 }
-
 .search input {
     height: 40px;
     width: 100%;
-    min-width: 515px;
+    min-width: 0;
     border: 0;
     outline: 0;
     background: none;
@@ -132,3 +131,33 @@ nav {
 .profile img {
     width: 32px;
 }
+
+
+@media (min-width: 763px) and (max-width: 1023px) {
+    .nav-mid {
+        gap: 8px;
+    }
+    .nav-mid .search {
+        width: clamp(280px, 38vw, 450px);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 762px) {
+    .nav-mid {
+        gap: 8px;
+    }
+
+    .nav-mid .search {
+        flex: 1;
+        width: auto;
+    }
+
+    .nav-right {
+        gap: 8px;
+    }
+
+    .create {
+        display: none;
+    }
+}
+
