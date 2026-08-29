@@ -50,7 +50,7 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
     useEffect(() => {
         const fetchComments = async () => {
             const response = await fetch(
-                `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=40&key=${API_KEY}`
+                `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=20&key=${API_KEY}`
             )
 
             if (!response.ok) {
@@ -75,269 +75,270 @@ const PlayVideo = ({ videoId, category, setCategory }) => {
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
             ></iframe>
+            <div className="play-video-box">
+                <h3>{videoData?.snippet.title}</h3>
 
-            <h3>{videoData?.snippet.title}</h3>
+                <div className="play-video-info">
+                    <div className="channel-info">
 
-            <div className="play-video-info">
-                <div className="channel-info">
+                        <div className="left-side">
 
-                    <div className="left-side">
-
-                        <div className="logo">
-                            <img
-                                src={channelData?.snippet.thumbnails.medium.url}
-                                alt=""
-                            />
-                        </div>
-
-                        <div className="channel">
-                            <p className='channel-name'>
-                                {videoData?.snippet.channelTitle}
-                                <img src={tick} alt="" />
-                            </p>
-
-                            <p className='channel-subs'>
-                                {formatViews(channelData?.statistics.subscriberCount)} subscribers
-                            </p>
-                        </div>
-
-                        <button className='btn join-btn'>
-                            Join
-                        </button>
-
-                        <button className='btn subs-btn'>
-                            Subscribe
-                        </button>
-
-                    </div>
-
-                    <div className="right-side">
-
-                        <span className='like rs'>
-                            <img src={like} alt="" />
-                            {formatViews(videoData?.statistics.likeCount)}
-                        </span>
-
-                        <span className='dislike rs'>
-                            <img src={dislike} alt="" />
-                        </span>
-
-                        <span className='rs'>
-                            <img src={share} alt="" />
-                            Share
-                        </span>
-
-                        <span className='rs'>
-                            <img src={ask} alt="" />
-                            Ask
-                        </span>
-
-                        <span className='rs'>
-                            <img src={save} alt="" />
-                            Save
-                        </span>
-
-                        <span className='rs threedots'>
-                            <img src={threedots} alt="" />
-                        </span>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div className="channel-expand-info">
-
-                <div className='ce-video-meta'>
-                    <p>
-                        {formatViews(videoData?.statistics.viewCount)} views
-                    </p>
-
-                    <p>
-                        {timeAgo(videoData?.snippet.publishedAt)}
-                    </p>
-                </div>
-
-                <div className={`ce-vid-description ${showDescription ? 'expanded' : ''}`}>
-                    <p>{videoData?.snippet.description}</p>
-                </div>
-                <button className={`description-toggle ${showDescription ? 'expanded' : ''}`}
-                    onClick={() => setShowDescription(!showDescription)}>
-                    {showDescription ? 'Show less' : '...more'}
-                </button>
-
-            </div>
-
-            <div className='comments-main'>
-
-                <div className="comments">
-
-                    <div className="comment-head">
-
-                        <h3>
-                            <span>{videoData?.statistics.commentCount}</span> Comments
-                        </h3>
-
-                        <span className='sort'>
-                            <img src={sort} alt="" />
-                            Sort by
-                        </span>
-
-                    </div>
-
-                    {!cmt && (
-                        <div className="cmt-profile">
-
-                            <span className='cmt-profile-pic'>
-                                <img src={profile} alt="" />
-                            </span>
-
-                            <input
-                                onClick={() => {
-                                    setCmt(true)
-                                }}
-                                type="text"
-                                placeholder='Add a comment...'
-                            />
-
-                        </div>
-                    )}
-
-                    {cmt && (
-                        <div className="cmt-profile-clicked">
-
-                            <p className='cmt-as'>
-                                Commenting as
-                            </p>
-
-                            <div className="cmt-profile-box">
-
+                            <div className="logo">
                                 <img
-                                    className='cmt-profile-box-img'
-                                    src={profile}
+                                    src={channelData?.snippet.thumbnails.medium.url}
                                     alt=""
                                 />
-
-                                <div className="cmt-profile-box-info">
-                                    <p>User Name</p>
-                                    <p>@UserName-b3y</p>
-                                </div>
-
-                                <div className='cmt-edit'>
-                                    <img src={edit} alt="" />
-                                </div>
-
                             </div>
 
-                            <div className="cmt-input">
-                                <input type="text" />
+                            <div className="channel">
+                                <p className='channel-name'>
+                                    {videoData?.snippet.channelTitle}
+                                    <img src={tick} alt="" />
+                                </p>
+
+                                <p className='channel-subs'>
+                                    {formatViews(channelData?.statistics.subscriberCount)} subscribers
+                                </p>
                             </div>
 
-                            <div className="cmt-footer">
+                            <button className='btn join-btn'>
+                                Join
+                            </button>
 
-                                <div className="emoji">
-                                    <img src={emoji} alt="" />
-                                </div>
-
-                                <div className="btns">
-
-                                    <div className="cancel-btn">
-                                        <button
-                                            onClick={() => {
-                                                setCmt(false)
-                                            }}
-                                        >
-                                            Cancel
-                                        </button>
-                                    </div>
-
-                                    <div className="comment-btn">
-                                        <button>
-                                            Comment
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                            </div>
+                            <button className='btn subs-btn'>
+                                Subscribe
+                            </button>
 
                         </div>
-                    )}
+
+                        <div className="right-side">
+
+                            <span className='like rs'>
+                                <img src={like} alt="" />
+                                {formatViews(videoData?.statistics.likeCount)}
+                            </span>
+
+                            <span className='dislike rs'>
+                                <img src={dislike} alt="" />
+                            </span>
+
+                            <span className='share rs'>
+                                <img src={share} alt="" />
+                                Share
+                            </span>
+
+                            <span className='ask rs'>
+                                <img src={ask} alt="" />
+                                Ask
+                            </span>
+
+                            <span className='save rs'>
+                                <img src={save} alt="" />
+                                Save
+                            </span>
+
+                            <span className='rs threedots'>
+                                <img src={threedots} alt="" />
+                            </span>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="channel-expand-info">
+
+                    <div className='ce-video-meta'>
+                        <p>
+                            {formatViews(videoData?.statistics.viewCount)} views
+                        </p>
+
+                        <p>
+                            {timeAgo(videoData?.snippet.publishedAt)}
+                        </p>
+                    </div>
+
+                    <div className={`ce-vid-description ${showDescription ? 'expanded' : ''}`}>
+                        <p>{videoData?.snippet.description}</p>
+                    </div>
+                    <button className={`description-toggle ${showDescription ? 'expanded' : ''}`}
+                        onClick={() => setShowDescription(!showDescription)}>
+                        {showDescription ? 'Show less' : '...more'}
+                    </button>
 
                 </div>
 
-                {comments.map((item) => {
+                <div className='comments-main'>
 
-                    const comment =
-                        item.snippet.topLevelComment.snippet
+                    <div className="comments">
 
-                    return (
-                        <div
-                            key={item.id}
-                            className="comments-card"
-                        >
+                        <div className="comment-head">
 
-                            <div className="cc-left">
+                            <h3>
+                                <span>{videoData?.statistics.commentCount}</span> Comments
+                            </h3>
 
-                                <div className="cc-pic">
-                                    <img
-                                        src={comment.authorProfileImageUrl}
-                                        alt=""
-                                    />
-                                </div>
-
-                            </div>
-
-                            <div className="cc-right">
-
-                                <div className="cc-r-first">
-
-                                    <span className="cc-user-name">
-                                        {comment.authorDisplayName}
-                                    </span>
-
-                                    <span className='cc-time'>
-                                        {timeAgo(comment.publishedAt)}
-                                    </span>
-
-                                </div>
-
-                                <span className="cc-comment">
-                                    {comment.textDisplay}
-                                </span>
-
-                                <div className="cc-btns">
-
-                                    <div className="like-btn c-btn">
-                                        <button>
-                                            <img src={like} alt="" />
-                                        </button>
-                                    </div>
-
-                                    <span className='like-btn-span'>
-                                        {formatViews(comment.likeCount)}
-                                    </span>
-
-                                    <div className="dislike-btn c-btn">
-                                        <button>
-                                            <img src={dislike} alt="" />
-                                        </button>
-                                    </div>
-
-                                    <div className="reply-btn c-btn">
-                                        <button>
-                                            Reply
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                            </div>
+                            <span className='sort'>
+                                <img src={sort} alt="" />
+                                Sort by
+                            </span>
 
                         </div>
-                    )
-                })}
 
+                        {!cmt && (
+                            <div className="cmt-profile">
+
+                                <span className='cmt-profile-pic'>
+                                    <img src={profile} alt="" />
+                                </span>
+
+                                <input
+                                    onClick={() => {
+                                        setCmt(true)
+                                    }}
+                                    type="text"
+                                    placeholder='Add a comment...'
+                                />
+
+                            </div>
+                        )}
+
+                        {cmt && (
+                            <div className="cmt-profile-clicked">
+
+                                <p className='cmt-as'>
+                                    Commenting as
+                                </p>
+
+                                <div className="cmt-profile-box">
+
+                                    <img
+                                        className='cmt-profile-box-img'
+                                        src={profile}
+                                        alt=""
+                                    />
+
+                                    <div className="cmt-profile-box-info">
+                                        <p>User Name</p>
+                                        <p>@UserName-b3y</p>
+                                    </div>
+
+                                    <div className='cmt-edit'>
+                                        <img src={edit} alt="" />
+                                    </div>
+
+                                </div>
+
+                                <div className="cmt-input">
+                                    <input type="text" />
+                                </div>
+
+                                <div className="cmt-footer">
+
+                                    <div className="emoji">
+                                        <img src={emoji} alt="" />
+                                    </div>
+
+                                    <div className="btns">
+
+                                        <div className="cancel-btn">
+                                            <button
+                                                onClick={() => {
+                                                    setCmt(false)
+                                                }}
+                                            >
+                                                Cancel
+                                            </button>
+                                        </div>
+
+                                        <div className="comment-btn">
+                                            <button>
+                                                Comment
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        )}
+
+                    </div>
+
+                    {comments.map((item) => {
+
+                        const comment =
+                            item.snippet.topLevelComment.snippet
+
+                        return (
+                            <div
+                                key={item.id}
+                                className="comments-card"
+                            >
+
+                                <div className="cc-left">
+
+                                    <div className="cc-pic">
+                                        <img
+                                            src={comment.authorProfileImageUrl}
+                                            alt=""
+                                        />
+                                    </div>
+
+                                </div>
+
+                                <div className="cc-right">
+
+                                    <div className="cc-r-first">
+
+                                        <span className="cc-user-name">
+                                            {comment.authorDisplayName}
+                                        </span>
+
+                                        <span className='cc-time'>
+                                            {timeAgo(comment.publishedAt)}
+                                        </span>
+
+                                    </div>
+
+                                    <span className="cc-comment">
+                                        {comment.textDisplay}
+                                    </span>
+
+                                    <div className="cc-btns">
+
+                                        <div className="like-btn c-btn">
+                                            <button>
+                                                <img src={like} alt="" />
+                                            </button>
+                                        </div>
+
+                                        <span className='like-btn-span'>
+                                            {formatViews(comment.likeCount)}
+                                        </span>
+
+                                        <div className="dislike-btn c-btn">
+                                            <button>
+                                                <img src={dislike} alt="" />
+                                            </button>
+                                        </div>
+
+                                        <div className="reply-btn c-btn">
+                                            <button>
+                                                Reply
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        )
+                    })}
+
+                </div>
             </div>
 
         </div>
