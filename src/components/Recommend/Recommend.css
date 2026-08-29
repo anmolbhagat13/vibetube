@@ -42,10 +42,15 @@
 .vid-card .vc-left {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .vid-card .vc-left img {
-    width: 325px;
+    width: 17vw;
+    min-width: 135px;
+    max-width: 400px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: 15px;
 }
 
@@ -53,13 +58,17 @@
     font-size: 15px;
     font-weight: 500;
     padding: 0 8px;
+    flex: 1;
+    min-width: 0;
     cursor: pointer;
 }
-.vid-name{
+
+.vid-name {
+    margin-top: 2px;
     text-decoration: none;
 }
 
-.c-right .vid-info {
+.vc-right .vid-info {
     display: flex;
     width: 100%;
 }
@@ -79,6 +88,11 @@
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.vid-views-box {
+    display: flex;
+    gap: 3px;
 }
 
 .vc-channel-name span,
@@ -125,4 +139,90 @@
 .vid-card:hover {
     outline: 6px solid #ccc;
     background: #ccc;
+}
+
+@media (max-width: 1440px) {
+    .vid-name {
+        text-decoration: none;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 1015px) and (max-width: 1199px) {
+    .vid-name {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .vc-channel-name {
+        overflow: hidden;
+    }
+
+    .vc-channel-name span {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+
+    .vid-views-box {
+        gap: 2px;
+    }
+
+    .vid-recommend .btn button {
+        font-size: 12px;
+    }
+
+    .vc-channel-name,
+    .vid-details {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1014px) {
+    .vid-card-layout{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(281.5px, 1fr));
+        gap: 15px;
+        padding: 0 15px;
+    }
+    .vid-recommend{
+        grid-column: 1/-1;
+    }
+    .vid-card{
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .vid-card .vc-left{
+        width: 100%;
+    }
+    .vid-card .vc-left img{
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        aspect-ratio: 16/9;
+        border-radius: 12px;
+    }
+    .vc-right{
+        width: 100%;
+        padding: 6px 0 0;
+    }
+    .vid-name{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    .vc-channel-name,
+    .vid-details{
+        font-size: 12px;
+    }
+    .options{
+        display: none;
+    }
 }

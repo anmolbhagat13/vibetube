@@ -102,12 +102,13 @@ const Recommend = () => {
                                 </div>
 
                                 <div className="vid-details">
+                                    <div className='vid-views-box'>
+                                        <img src={play} alt="" />
 
-                                    <img src={play} alt="" />
-
-                                    <span className="vid-views">
-                                        {formatViews(item.statistics.viewCount)}
-                                    </span>
+                                        <span className="vid-views">
+                                            {formatViews(item.statistics.viewCount)}
+                                        </span>
+                                    </div>
 
                                     <span className="vid-p-time">
                                         {timeAgo(item.snippet.publishedAt)}
