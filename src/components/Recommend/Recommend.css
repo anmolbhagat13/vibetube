@@ -192,6 +192,8 @@
     }
     .vid-recommend{
         grid-column: 1/-1;
+        min-width: 0;
+        overflow-x: auto;
     }
     .vid-card{
         display: block;
@@ -224,5 +226,16 @@
     }
     .options{
         display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .vid-card-layout {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .vid-recommend {
+        overflow-x: auto;
     }
 }
