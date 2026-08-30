@@ -7,7 +7,6 @@
 }
 
 .card {
-    /* min-width: 400px; */
     min-width: 0;
     border-radius: 15px;
     text-decoration: none;
@@ -90,7 +89,7 @@
 @media (max-width: 1991px) {
     .feed{
         margin-top: -20px;
-    };
+    }
 }
 @media (max-width: 1440px) {
     .feed {
