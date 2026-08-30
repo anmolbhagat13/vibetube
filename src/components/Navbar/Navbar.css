@@ -17,6 +17,7 @@ nav {
 .nav-left {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .menu-btn {
@@ -50,7 +51,8 @@ nav {
     align-items: center;
     justify-content: center;
     height: 56px;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     gap: 15px;
 }
 
@@ -96,6 +98,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex-shrink: 0;
 }
 
 .create {
@@ -160,7 +163,7 @@ nav {
 
 @media (max-width: 600px) {
     nav {
-        padding: 18px 14px;
+        padding: 0 14px;
     }
 
     .menu-btn {
@@ -178,10 +181,11 @@ nav {
         outline: none;
         display: flex;
         justify-content: flex-end;
+        width: auto;
+        min-width: 0;
     }
 
     .search input {
-        display: none;
         border: none;
         display: none;
     }
@@ -198,7 +202,9 @@ nav {
 
 @media (max-width: 500px) {
     nav {
-        padding: 18px 10px 18px 2px;
+        padding: 0 8px;
+        justify-content: space-between;
+        gap: 8px;
     }
 
     .create p {
@@ -214,12 +220,24 @@ nav {
         padding: 0;
     }
 
-    .nav-mid {
-        gap: 8px;
-        justify-content: flex-end;
+    .vt-icon .icon-img {
+        width: 24px;
     }
 
-    .search-btn:hover{
+    .vt-icon img:not(.icon-img) {
+        width: 60px;
+        height: 20px;
+    }
+
+    .nav-mid {
+        justify-content: flex-end;
+    }
+    .nav-mid .search {
+        justify-content: flex-end;
+        flex: none;
+    }
+
+    .search-btn:hover {
         background: none;
     }
 
@@ -227,8 +245,10 @@ nav {
         background: none;
     }
 
-    .nav-mid button {
+    .search-btn {
         width: 24px;
+        height: 32px;
+        padding: 0;
     }
 
     .mic-btn {
@@ -236,6 +256,25 @@ nav {
     }
 
     .nav-right {
-        gap: 5px;
+        gap: 8px;
+        margin: 0;
+    }
+
+    .bell-btn {
+        width: 30px;
+        height: 30px;
+    }
+    .bell-btn:hover{
+        background: none;
+    }
+
+    .create {
+        width: 32px;
+        height: 32px;
+        justify-content: center;
+    }
+    .profile img{
+        height: 30px;
+        width: 30px;
     }
 }
