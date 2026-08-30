@@ -1,16 +1,88 @@
-# React + Vite
+# VibeTube 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+VibeTube is a responsive video-streaming web application inspired by YouTube. It is built with React and focuses on recreating the core layout and user interface of a modern video platform.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Responsive layout for desktop, tablet, and mobile screens
+* YouTube-inspired navigation and sidebar
+* Video feed with video cards
+* Video playback page
+* Recommended videos section
+* Displays the number of likes for each video
+* Responsive sidebar behavior
+* Clean and modern UI
 
-## React Compiler
+## 🛠️ Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **React**
+* **JavaScript**
+* **HTML5**
+* **CSS3**
+* **Vite**
 
-## Expanding the Oxlint configuration
+## 📱 Responsive Design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+VibeTube is designed to work across different screen sizes, including:
+
+* Desktop
+* Tablet
+* Mobile
+
+Special attention has been given to smaller screens to maintain a usable and consistent layout.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have **Node.js** and **npm** installed on your system.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/anmolbhagat13/vibetube.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd vibetube
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local development URL shown in your terminal.
+
+## 📂 Project Structure
+
+```text
+vibetube/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   └── App.jsx
+├── package.json
+└── README.md
+```
+
+## 🎯 Purpose
+
+VibeTube was created as a hands-on project to practice and improve frontend development skills, particularly React, CSS, responsive design, and component-based UI development.
+
+## 📌 Status
+
+VibeTube is currently under development. More features and improvements may be added over time.
